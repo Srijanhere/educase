@@ -4,10 +4,7 @@ let db;
 
 export const initDB = async () => {
   db = await mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,         
-    password: process.env.PASSWORD, 
-    database: process.env.DB
+    uri:process.env.DATABASE_URL
   });
 
   console.log("db connected.");
